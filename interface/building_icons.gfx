@@ -1,0 +1,6 @@
+spriteType = {
+		name = "GFX_cargo_depot_gfx"
+		texturefile = "gfx//interface//buildings//cargo_depot.tga"
+		loadType = "INGAME"
+	}
+}
