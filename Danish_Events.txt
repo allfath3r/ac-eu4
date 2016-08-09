@@ -1,0 +1,10 @@
+##################################################
+#  Danish Events
+##################################################
+
+#Norwegian land claim
+
+name_space = norwegian
+
+country_modifier = {
+        id = Danish.1
