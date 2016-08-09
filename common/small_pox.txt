@@ -1,0 +1,65 @@
+small_pox = {
+}
+
+potential = {
+        NOT = {
+                has_country_flag = had_influenza_epidemic
+        }
+        OR = {
+                technology_group = north_american
+                technology_group = mesoamerican
+                technology_group = andean
+                technology_group = south_american
+        }
+        any_country = {
+                technology_group = western
+                has_discovered = ROOT
+        }
+}
+
+can_start = {
+        has_any_disaster = no
+        is_year = 1500
+}
+
+can_stop = {
+        has_any_disaster = yes
+}
+
+progress = {
+        modifier = {
+                factor = 1
+                any_country = {
+                        technology_group = western
+                        has_discovered = ROOT
+                }
+        }
+        modifier = {
+                factor = 2
+                any_neighbor_country = {
+                        technology_group = western
+                }
+        }
+        modifier = {
+                factor = 1
+                any_neighbor_country = {
+                        OR = {
+                                has_country_flag = had_influenza_epidemic
+                                has_disaster = influenza_epidemic
+                        }
+                }
+        }
+}
+
+can_end = {
+        had_country_flag = { flag = flu_epidemic days = 3650 }
+        stability = 2
+}
+
+modifier = {
+        global_unrest = 3
+        stability_cost_modifier = 0.5
+}
+
+on_start = small_pox.
+

@@ -1,0 +1,37 @@
+cargo_depot = {
+    cost = 1000
+    time = 12
+    trigger = {
+    }
+    modifier = {
+        global_settler_increase = 0.10
+		
+    ai_will_do = {
+        factor = 100
+        modifier = {
+			factor = 0
+			owner = {
+				is_at_war = yes
+		}
+	    modifier = {
+            factor = 0.10
+            owner = { NOT = { monthly_income = 25 } }
+        }
+        modifier = {
+            factor = 0.25
+            owner = { NOT = { monthly_income = 50 } }
+        }
+        modifier = {
+            factor = 0.25
+            owner = { monthly_income = 75 }
+        }       
+        modifier = {
+            factor = 0.25
+            owner = { monthly_income = 100 }
+        }   
+        modifier = {
+            factor = 0.10
+            is_overseas = yes
+        }           
+    }
+}
