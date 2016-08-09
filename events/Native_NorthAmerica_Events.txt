@@ -1,0 +1,213 @@
+################################
+# Events for Smallpox Disaster 
+################################
+
+#smallpox discovery
+
+namespace = small_pox_discovery
+
+country_event = {
+        id = small_pox.1
+		title = "EVTNAME2000.1"                                     #A new Disease
+		desc = "EVTDESC2000.1"
+		picture = PLAGUE_eventPicture
+		fire_only_once = yes
+		
+		trigger = {
+		        has_disaster = small_pox		   
+				NOT = {
+				        owner = { has_culture_group = european }
+				}		
+				OR = {
+				        has_technology_group = andean
+                        has_technology_group = north_american
+                        has_technology_group = mesoamerican
+				}
+				any_country = {
+				        technology_group = western
+						has_discovered = ROOT
+						}
+	    }		
+		
+		mean_time_to_happen = {
+		        months = 12
+		}
+		
+		option = {
+		        name = "EVTOPTA2000.1"
+				add_treasury = -102.40				
+		}
+
+		option = {
+		        name = "EVTOPTB2000.1"
+                modifier = manpower_smallpox_effect
+                add_manpower = -2000
+                add_prestige = -5								
+		}
+		
+		option = {
+		        name = "EVTOPTC2000.1"
+                add_stability = -2
+                add_prestige = -20	
+                modifier = smallpox_depression	
+                }				
+}
+
+
+#smallpox advancement
+
+name_space = small_pox_advancement
+
+country_event = {
+        id = small_pox.2
+		title = "EVTNAME2001.1"                             #smallpox terror
+		desc = "EVTDESC2001.1"
+		picture = PLAGUE_eventPicture
+		fire_only_once = no
+		
+		is_trigered_only = yes
+		
+		trigger = {
+		        has_country_modifier = {
+				        name = native_massacre
+				}		
+        }
+		
+		mean_time_to_happen = {
+		        days = 1
+		}		
+		
+		option = {
+		        name = "EVTOPTA2001.1"                         #We must put a stop to it now before it gets out of hand                    				
+				add_treasury = -102.30
+				add_adm_power = -25
+				add_dip_power = 25
+		}
+		option = {
+		        name = "EVTOPTB2001.1"                         #It is none of our concern
+				add_stability = -2
+                add_prestige = -10				
+        }
+}		
+
+#Native Massacre
+
+name_space = village_massacre
+
+country_event = {
+        id = small_pox.3
+		title = "EVTNAME2002.1"                              #village massacre
+		desc = "EVTDESC2002.1"
+		picture = NATIVEMASSACRE_eventPicture
+		
+		trigger = {
+		        any_country = {
+				        technology_group = western
+						has_discovered = ROOT
+				    }
+				has_country_modifier = bad_neighbours
+		}		
+			
+		mean_time_to_happen = {
+		        days = 1
+        }
+
+        option = {
+                name = "EVTOPTA2002.1"                 #they will pay for this in time
+				add_country_modifier = {
+				name = native_massacre
+				}
+	    }
+}	
+
+
+
+
+
+
+
+#European Neighbours
+
+name_space = new_neighbours
+
+country_event = {
+        id = Euro-native.1
+		title = "EVTNAME1000.1"
+		desc = "EVTDESC1000.1"
+		picture = LANDEDEUROPEANS_eventPicture
+		fire_only_once = yes
+		
+		trigger = {
+		        any_neighbour_country = {
+				        technology_group = western
+		        }
+		}		
+
+        mean_time_to_happen = {
+		        days = 1
+        }
+        
+        option = {
+		        name = "EVTOPTA1000.1"                             #attack and raid them
+                add_treasury = 60.72
+				prestige = -15
+				stability = 1
+		}		
+        
+        option = {
+                name = "EVTOPTB1000.1"                             #offer them to join us
+                manpower = 2256
+				add_dip_power = 35
+				add_prestige = 5
+				add_country_modifier = {
+				        name = support_troops
+						duration = 120
+				}		
+		}
+		
+		option = {
+		        name = "EVTOPTC1000.1"                             #offer assistance
+                add_country_modifier = {
+				        name = assisting_settlers
+		        }
+        }				
+}	
+
+#thanksgiving feast
+
+name_space = thanksgiving
+
+country_modifier = {
+        id = thanksgiving.1
+		title = "EVTNAME1001.1"                                                  #ThanksGiving Feast
+		desc = "EVTDESC1001.1"
+		picture = THANKSGIVING_eventPicture
+		fire_only_once = yes
+		
+		trigger = {
+		        has_country_modifier = assisting_settlers
+		}
+
+        mean_time_to_happen = {
+		        days = 10
+		}		
+				
+		option = {
+		        name = "EVTOPTA1001.1"                                           #Here's to a better future
+                diplomatic_repuation = 40
+                add_dip_power = 75
+                add_prestige = 20
+                add_stability = 1
+                add_country_modifier = {
+				        name = native_assistance
+                        duration = 400
+				}
+		}
+}		
+				
+						
+				
+				
+		
+ 						
+                				

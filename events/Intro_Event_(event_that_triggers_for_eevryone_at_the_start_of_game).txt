@@ -1,0 +1,80 @@
+#INTRO EVENT
+
+name_space = intro_event
+
+country_event = {
+        id = intro_event.1
+		title = "EVTINTRONAME"
+		desc = "EVTINTRODESC"
+		picture = INTROEVENT_eventPicture
+		
+		trigger = {
+		        any_country = {
+				        adm_tech = 1
+				}
+        }				
+						
+		mean_time_to_happen = { days = 1 }
+
+		immediate = {
+		        hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = grain
+						}
+                        add_country_modifier = {
+						        name = "grain_mod_effect"
+								duration = 999999
+						}		
+                }						
+		        hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = slaves
+						}
+                        add_country_modifier = {
+						        name = "slave_tradegood_mod_effect"
+								duration = 999999
+						}		
+                }						
+		        hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = naval_supplies
+						}
+                        add_country_modifier = {
+						        name = "naval_supplies_tradegood_mod_effect"
+								duration = 999999
+						}		
+                }
+		        hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = fish
+						}
+                        add_country_modifier = {
+						        name = "fish_mod_effect"
+								duration = 999999
+						}		
+                }
+		        hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = wool
+						}
+                        add_country_modifier = {
+						        name = "wool_mod_effect_(winter_effect)"
+								duration = 999999
+						}		
+				}
+                hidden_effect = {
+				        any_owned_province = {
+						        trade_goods = spices
+						}
+                        add_country_modifier = {
+						        name = "spices_tradegood_mod_effect"
+								duration = 999999
+						}		
+				}
+}				
+				
+        option = {
+		        name = "EVTINTROOPTA"
+				}
+}				
+                				
